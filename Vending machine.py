@@ -3,80 +3,80 @@ items_in_machine = [
         "item_id": 0,
         "item_name": "Crossiant",
         'item_price': 7,
-        'item_stock' : 10,
+        'item_stock': 10,
     },
     {
         "item_id": 1,
         "item_name": "Donut",
         'item_price': 6,
-        'item_stock' : 10,
+        'item_stock': 10,
     },
     {
         "item_id": 2,
         "item_name": "Chocolate Cookies",
         'item_price': 7,
-        'item_stock' : 10,
+        'item_stock': 10,
     },
     {
         "item_id": 3,
         "item_name": "Muffin",
         'item_price': 6,
-        'item_stock' : 10,
+        'item_stock': 10,
     },
     {
         "item_id": 4,
         "item_name": "Coffee",
         'item_price': 7,
-        'item_stock' : 10,
+        'item_stock': 10,
     },
     {
         "item_id": 5,
         "item_name": "Hot chocolate",
         'item_price': 8,
-        'item_stock' : 10,
+        'item_stock': 10,
     },
     {
         "item_id": 6,
         "item_name": "Mocha",
         'item_price': 10,
-        'item_stock' : 10,
+        'item_stock': 10,
     },
     {
         "item_id": 7,
         "item_name": "Latte",
         'item_price': 12,
-        'item_stock' : 10,
+        'item_stock': 10,
     },
     {
         "item_id": 8,
         "item_name": "Iced Coffee",
         'item_price': 9,
-        'item_stock' : 10,
+        'item_stock': 10,
     },
     {
         "item_id": 9,
         "item_name": "Iced Mocha",
         'item_price': 12,
-        'item_stock' : 10,
+        'item_stock': 10,
     },
     {
         "item_id": 10,
         "item_name": "Iced Latte",
         'item_price': 15,
-        'item_stock' : 10,
+        'item_stock': 10,
     },
     {
         "item_id": 11,
         "item_name": "Iced Tea",
         'item_price': 10,
-        'item_stock' : 10,
+        'item_stock': 10,
     },
 ]
 
 
 items_purchased = []
 
-reciept = """
+receipt = """
 \t\tPRODUCT -- PRICE
 """
 
@@ -112,30 +112,30 @@ def machine(items_in_machine, run, items_purchased):
         
         
 
-    to_get_receipt = int(input(("1. print the reciept? 2. only print the total sum .. ")))
+    to_get_receipt = int(input(("1. print the receipt? 2. only print the total sum .. ")))
     if to_get_receipt == 1:
-        print(create_reciept(items_purchased, reciept))
+        print(create_receipt(items_purchased, receipt))
     elif to_get_receipt == 2:
         print(sum(items_purchased))
     else:
         print("INVALID ENTRY")
 
 
-def create_reciept(items_purchased, reciept):
+def create_receipt(items_purchased, receipt):
 
     for i in items_purchased:
-        reciept += f"""
+        receipt += f"""
         \t{i["item_name"]} -- {i['item_price']}
         """
 
-    reciept += f"""
+    receipt += f"""
         \tTotal --- {sum(items_purchased)}
         
     
         
         """
    
-    return reciept
+    return receipt
 
 def sum(items_purchased):
     sum = 0
