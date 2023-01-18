@@ -117,8 +117,6 @@ for i in items_purchased:
 money = int(input("Enter your money"))
 Total = 0
 
-
-
 for i in items_purchased:
     Total += i["item_price"]
     
