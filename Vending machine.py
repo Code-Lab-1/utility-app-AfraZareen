@@ -99,7 +99,7 @@ while run:
     
     
     
-    add_in_cart = str(input("Enter Y to add more items or N to quit"))
+    add_in_cart = str(input("Enter Y to add more items or N to quit: "))
     if add_in_cart == "N":
             run = False
 
