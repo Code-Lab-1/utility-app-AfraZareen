@@ -1,86 +1,86 @@
-items_available = [
+product_available = [
     {
-        "item_code": 0,
-        "item_name": "Crossiant",
-        'item_price': 7,
-        'item_stock': 10,
+        "product_code": 0,
+        "product_name": "Crossiant",
+        'product_price': 7,
+        'product_stock': 10,
     },
     {
-        "item_code": 1,
-        "item_name": "Donut",
-        'item_price': 6,
-        'item_stock': 10,
+        "product_code": 1,
+        "product_name": "Donut",
+        'product_price': 6,
+        'product_stock': 10,
     },
     {
-        "item_code": 2,
-        "item_name": "Chocolate Cookies",
-        'item_price': 7,
-        'item_stock': 10,
+        "product_code": 2,
+        "product_name": "Chocolate Cookies",
+        'product_price': 7,
+        'product_stock': 10,
     },
     {
-        "item_code": 3,
-        "item_name": "Muffin",
-        'item_price': 6,
-        'item_stock': 10,
+        "product_code": 3,
+        "product_name": "Muffin",
+        'product_price': 6,
+        'product_stock': 10,
     },
     {
-        "item_code": 4,
-        "item_name": "Coffee",
-        'item_price': 7,
-        'item_stock': 10,
+        "product_code": 4,
+        "product_name": "Coffee",
+        'product_price': 7,
+        'product_stock': 10,
     },
     {
-        "item_code": 5,
-        "item_name": "Hot chocolate",
-        'item_price': 8,
-        'item_stock': 10,
+        "product_code": 5,
+        "product_name": "Hot chocolate",
+        'product_price': 8,
+        'product_stock': 10,
     },
     {
-        "item_code": 6,
-        "item_name": "Mocha",
-        'item_price': 10,
-        'item_stock': 10,
+        "product_code": 6,
+        "product_name": "Mocha",
+        'product_price': 10,
+        'product_stock': 10,
     },
     {
-        "item_code": 7,
-        "item_name": "Latte",
-        'item_price': 12,
-        'item_stock': 10,
+        "product_code": 7,
+        "product_name": "Latte",
+        'product_price': 12,
+        'product_stock': 10,
     },
     {
-        "item_code": 8,
-        "item_name": "Iced Coffee",
-        'item_price': 9,
-        'item_stock': 10,
+        "product_code": 8,
+        "product_name": "Iced Coffee",
+        'product_price': 9,
+        'product_stock': 10,
     },
     {
-        "item_code": 9,
-        "item_name": "Iced Mocha",
-        'item_price': 12,
-        'item_stock': 10,
+        "product_code": 9,
+        "product_name": "Iced Mocha",
+        'product_price': 12,
+        'product_stock': 10,
     },
     {
-        "item_code": 10,
-        "item_name": "Iced Latte",
-        'item_price': 15,
-        'item_stock': 10,
+        "product_code": 10,
+        "product_name": "Iced Latte",
+        'product_price': 15,
+        'product_stock': 10,
     },
     {
-        "item_code": 11,
-        "item_name": "Iced Tea",
-        'item_price': 10,
-        'item_stock': 10,
+        "product_code": 11,
+        "product_name": "Iced Tea",
+        'product_price': 10,
+        'product_stock': 10,
     },
 ]
 
-items_purchased = []
-sum = 0
+product_purchased = []
+
 run = True
 print("Welcome to the Vending Machine\n\n")
 
 
-for i in items_available:
-    print(f"Item: {i['item_name']} --- Price: {i['item_price']} --- Item Code: {i['item_code']} --- Item Stock: {i['item_stock']}")
+for i in product_available:
+    print(f"Name: {i['product_name']} --- Price: {i['product_price']} --- Code: {i['product_code']} --- Stock: {i['product_stock']}")
 
 
 
@@ -88,13 +88,14 @@ for i in items_available:
 
 while run:
 
-    select = int(input("Enter the item code of the product you want to buy: "))
+    select = int(input("Enter the product code you want to buy: "))
 
-    if select < len(items_available):
-            items_purchased.append(items_available[select])
+    if select < len(product_available):
+            product_purchased.append(product_available[select])
             
     else:
-        print("THE PRODUCT ID IS WRONG!")
+        print("Error Code, Try again")
+        
         
     
     
@@ -107,36 +108,37 @@ while run:
    
    
    
-
-for i in items_purchased:
-    print(i["item_name"],"",i['item_price'])
+print("Product name", "---", "Product price")
+for i in product_purchased:
+    
+    print(i["product_name"],"---",i['product_price'])
 
  
 
 
-money = int(input("Enter your money"))
+money = int(input("Enter your money: "))
 Total = 0
 
-for i in items_purchased:
-    Total += i["item_price"]
+for i in product_purchased:
+    Total += i["product_price"]
     
 if Total == int(money):
-    for i in items_purchased:
-        print(f"Your {i['item_name']} has been dispensed, Please collect it")
+    for i in product_purchased:
+        print(f"Your {i['product_name']} has been dispensed, Please collect it")
             
 elif Total < int(money):
     Balance1 = money - Total
     print("Here is your balance" , Balance1, "DHS")
-    for i in items_purchased:
-        print(f"Your {i['item_name']} has been dispensed, Please collect it")
+    for i in product_purchased:
+        print(f"Your {i['product_name']} has been dispensed, Please collect it")
             
 elif Total > int(money):
     Balance2 = Total - money
     print("Enter" , Balance2, "DHS", "more")
     money = int(input("Enter the money"))
     if Balance2 == int(money):
-            for i in items_purchased:
-                print(f"Your {i['item_name']} has been dispensed, Please collect it")
+            for i in product_purchased:
+                print(f"Your {i['product_name']} has been dispensed, Please collect it")
                 
     elif Balance2 < int(money):
         Balance3 = money - Balance2
