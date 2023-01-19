@@ -76,7 +76,7 @@ product_available = [
 
 product_purchased = []
 
-run = True
+
 print("Welcome to the Vending Machine\n\n")
 
 
@@ -86,7 +86,7 @@ for i in product_available:
 
 
 
-
+run = True
 while run:
 
     select = int(input("Enter the product code you want to buy: "))
@@ -103,7 +103,8 @@ while run:
     
     add_in_cart = str(input("Enter Y to add more items or N to quit: "))
     if add_in_cart == "N":
-            run = False
+        run = False
+           
 
 
    
